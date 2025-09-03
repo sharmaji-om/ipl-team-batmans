@@ -183,8 +183,7 @@ def run_batsman_run_app():
     
     numeric_cols = ["Matches Played", "Avg Runs per Match", "Strike Rate", 
                     "Batting Position", "Previous Match Runs", "Form (Last 5 Innings Avg.)"]
-    url =  "https://raw.githubusercontent.com/sharmaji-om/ipl-team-batmans/main/data/ipl_batsmen_current_players_no_team.csv"
-
+    url =  "https://raw.githubusercontent.com/sharmaji-om/ipl-team-batmans/main/ipl_batsmen_current_players_no_team.csv"
 
     dataset =  pd.read_csv(url) 
     categorical_cols = ["Player", "Opponent Team", "Venue"]
@@ -394,6 +393,7 @@ def run_batsman_run_app():
         except Exception as e:
             st.error(f"❌ Error in prediction: {e}")
             st.info("Please check your input values and try again.")
+
 
 
 
