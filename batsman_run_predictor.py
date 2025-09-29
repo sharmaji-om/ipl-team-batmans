@@ -173,6 +173,8 @@ def run_batsman_run_app():
     # Load models (keeping original logic)
     with open("model.pkl", "rb") as file:
         model = pickle.load(file)
+    if hasattr(model, "set_params"):
+        model.set_params(device="cpu")
     with open("scaler.pkl", "rb") as file:
         scaler = pickle.load(file)
 
@@ -393,6 +395,7 @@ def run_batsman_run_app():
         except Exception as e:
             st.error(f"❌ Error in prediction: {e}")
             st.info("Please check your input values and try again.")
+
 
 
 
